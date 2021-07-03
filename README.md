@@ -42,4 +42,6 @@ frame_red = epd.get_frame_buffer(Image.open('圖片二'))
         
 (8).顯示圖層 `epd.display_frame(frame_black, frame_red)`
         
+## 電子墨水性質
+在顯示的時候黑色電子墨水會先顯示， 接下來紅色電子墨水以暈染的型態浮現在黑色電子墨水上層．
 
