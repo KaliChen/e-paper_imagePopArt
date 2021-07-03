@@ -1,18 +1,27 @@
 # 用e-paper做普普風格影像顯示
 
-這次使用的元件是1.54inch_e-paper_b (黑白紅顯示)
+這次使用的元件是[1.54inch_e-paper_b (黑白紅顯示)](https://github.com/soonuse/epd-library-python/tree/master/1.54inch_e-paper_b)
 
-參考網址如下：
+## Pin Layout
 
-[https://github.com/soonuse/epd-library-python/tree/master/1.54inch_e-paper_b](https://github.com/soonuse/epd-library-python/tree/master/1.54inch_e-paper_b)
+![](https://github.com/KaliChen/e-paper_imagePopArt/blob/main/gpiolayout.jpg)
+
+* VCC -> 3.3
+* GND -> GND
+* DIN -> MOSI
+* CLK -> SCLK
+* CS -> 24 (Physical, BCM: CE0, 8)
+* D/C -> 22 (Physical, BCM: 25)
+* RES -> 11 (Physical, BCM: 17)
+* BUSY -> 18 (Physical, BCM: 24)
 
 先大概簡單介紹一下該函式庫，不用特別下載安裝依賴庫設定環境，函式庫直接帶入套用就可以使用了
 
 程式運作程序大致為：
 #### 1. 呼叫epd物件 
-        `epd = epd1in54b.EPD()`
+`epd = epd1in54b.EPD()`
 #### 2. 初始化epd物件 
-        `epd.init()`
+`epd.init()`
 #### 3. 清空 frame_black 和 flame_red的緩衝器
 
 ```
