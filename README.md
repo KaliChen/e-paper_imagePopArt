@@ -66,5 +66,14 @@ frame_red: 圖像經過灰階處理後以THRESH_BINARY二值化，匡列出塗�
 
 frame_black: 圖像經過canny找出邊緣輪廓後，用dilate膨脹加粗輪廓（膨脹這段可根據圖像需求追加），再用THRESH_BINARY_INY反轉陰陽．
 
+## 成果
+原圖
 
+<img src="https://github.com/KaliChen/e-paper_imagePopArt/blob/main/206702892_5906918729348832_1011485150956092844_n.jpg" width=50% height=50%>
 
+frame_red![](https://github.com/KaliChen/e-paper_imagePopArt/blob/main/BGR2GRAY_THRESH_BINARY.jpg)
+frame_black![](https://github.com/KaliChen/e-paper_imagePopArt/blob/main/CANNY_THRESH_BINARY_INV.jpg)
+
+display_frame
+
+<img src="https://github.com/KaliChen/e-paper_imagePopArt/blob/main/cat1.jpg" width=50% height=50%>
