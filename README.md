@@ -55,10 +55,16 @@ frame_red = epd.get_frame_buffer(Image.open('圖片二'))
 
 在顯示的時候黑色電子墨水會先顯示並且可以呈現灰階效果， 隨後紅色電子墨水以暈染的型態浮現在黑色電子墨水上層．
 
-接下來就利用以上電子墨水的特性，以OpenCV來設計影像轉換的演算法
+接下來就利用以上電子墨水的特性，以OpenCV來設計影像轉換的演算法，參考如下圖：
+
+![https://github.com/KaliChen/e-paper_imagePopArt/blob/main/Display.jpg](https://github.com/KaliChen/e-paper_imagePopArt/blob/main/Display.jpg)
 
 frame_black 作為勾勒圖像輪廓的線條使用，frame_red 作為填滿封閉區域使用
 
-## 色彩原理
-[http://www.charts.kh.edu.tw/teaching-web/98color/color2-1.htm](http://www.charts.kh.edu.tw/teaching-web/98color/color2-1.htm)
+### 說明
+frame_red: 圖像經過灰階處理後以THRESH_BINARY二值化，匡列出塗滿的部位，注意區域色彩如果明度太高，THRESH_BINARY的參數沒跟著校正的話，會匡列不出塗滿區域，請參考[色彩原理](http://www.charts.kh.edu.tw/teaching-web/98color/color2-1.htm)
+
+frame_black: 圖像經過canny找出邊緣輪廓後，用dilate膨脹加粗輪廓（膨脹這段可根據圖像需求追加），再用THRESH_BINARY_INY反轉陰陽．
+
+
 
